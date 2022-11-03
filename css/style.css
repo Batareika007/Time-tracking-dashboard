@@ -520,7 +520,7 @@ body {
 }
 .user-card__top {
   border-radius: 1rem;
-  padding: 1.5rem 1.5rem 3rem 1.5rem;
+  padding: 1.5rem 1.5rem 50% 1.5rem;
   background-color: hsl(246deg, 80%, 60%);
 }
 .user-card__top img {
@@ -531,6 +531,7 @@ body {
 .user-card__top p {
   font-size: 70%;
   color: hsl(236deg, 100%, 87%);
+  margin-bottom: 0.5rem;
 }
 .user-card__top h1 {
   margin: 0;
@@ -549,6 +550,18 @@ body {
           flex-direction: column;
   gap: 1rem;
   font-size: 80%;
+  color: hsl(236deg, 100%, 87%);
+}
+.user-card__nav_item {
+  cursor: pointer;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+.user-card__nav_item:hover {
+  color: #fff;
+}
+.user-card__nav_item.active {
+  color: white;
 }
 
 .cards {
@@ -558,6 +571,13 @@ body {
   padding: 2rem;
   background-color: hsl(235deg, 46%, 20%);
   border-radius: 1rem;
+  cursor: pointer;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  overflow: hidden;
+}
+.cards__inner:hover {
+  background-color: hsl(235deg, 45%, 61%);
 }
 .cards__top {
   display: -webkit-box;
@@ -583,14 +603,17 @@ body {
   color: hsl(236deg, 100%, 87%);
 }
 .cards__container {
-  border-radius: 1rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 2rem;
+  border-bottom-left-radius: 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  background-position: top right;
+  background-position: 80% 0;
   background-repeat: no-repeat;
   padding-top: 3rem;
 }

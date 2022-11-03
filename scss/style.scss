@@ -89,7 +89,6 @@ button {
 /** ============ start  custom style ============ */
 html {
 	min-height: 100%;
-	// height: 100%;
 }
 body {
 	font-family: "Rubik", sans-serif;
@@ -148,7 +147,7 @@ body {
 	overflow: hidden;
 	&__top {
 		border-radius: 1rem;
-		padding: 1.5rem 1.5rem 3rem 1.5rem;
+		padding: 1.5rem 1.5rem 50% 1.5rem;
 		background-color: $cardMainBg;
 		img {
 			border-radius: 50%;
@@ -158,6 +157,7 @@ body {
 		p {
 			font-size: 70%;
 			color: $cardText;
+			margin-bottom: 0.5rem;
 		}
 		h1 {
 			margin: 0;
@@ -172,14 +172,32 @@ body {
 		flex-direction: column;
 		gap: 1rem;
 		font-size: 80%;
+		color: $cardText;
+		&_item {
+			cursor: pointer;
+			transition: color 0.3s ease;
+			&:hover {
+				color: $white;
+			}
+			&.active {
+				color: white;
+			}
+		}
 	}
 }
 .cards {
 	position: relative;
+
 	&__inner {
 		padding: 2rem;
 		background-color: $cardBg;
 		border-radius: 1rem;
+		cursor: pointer;
+		transition: 0.3s ease;
+		overflow: hidden;
+		&:hover {
+			background-color: $cardBgHover;
+		}
 	}
 
 	&__top {
@@ -200,11 +218,15 @@ body {
 		font-size: 80%;
 		color: $cardText;
 	}
+
 	&__container {
-		border-radius: 1rem;
+		border-top-left-radius: 1rem;
+		border-top-right-radius: 1rem;
+		border-bottom-right-radius: 2rem;
+		border-bottom-left-radius: 2rem;
 		display: flex;
 		align-items: flex-end;
-		background-position: top right;
+		background-position: 80% 0;
 		background-repeat: no-repeat;
 		padding-top: 3rem;
 	}
