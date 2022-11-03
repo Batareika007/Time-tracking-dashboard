@@ -487,8 +487,6 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   gap: 1rem;
   border-radius: 1rem;
 }
@@ -499,8 +497,8 @@ body {
 }
 .main__item-cards {
   -webkit-box-flex: 1;
-      -ms-flex: 1 1 60%;
-          flex: 1 1 60%;
+      -ms-flex: 1 0 60%;
+          flex: 1 0 60%;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-pack: center;
@@ -509,8 +507,8 @@ body {
 }
 .main__item-cards div {
   -webkit-box-flex: 1;
-      -ms-flex: 1 0 200px;
-          flex: 1 0 200px;
+      -ms-flex: 1 0 30%;
+          flex: 1 0 30%;
 }
 
 .user-card {
@@ -523,11 +521,6 @@ body {
   padding: 1.5rem 1.5rem 50% 1.5rem;
   background-color: hsl(246deg, 80%, 60%);
 }
-.user-card__top img {
-  border-radius: 50%;
-  border: 2px solid #fff;
-  margin-bottom: 1.8rem;
-}
 .user-card__top p {
   font-size: 70%;
   color: hsl(236deg, 100%, 87%);
@@ -538,6 +531,13 @@ body {
   font-size: inherit;
   font-weight: inherit;
   font-size: 180%;
+}
+.user-card__img {
+  margin-bottom: 1.5rem;
+}
+.user-card__img img {
+  border-radius: 50%;
+  border: 2px solid #fff;
 }
 .user-card__nav {
   padding: 1.8rem;
@@ -646,4 +646,78 @@ body {
 .self-care {
   background-color: hsl(43deg, 84%, 65%);
   background-image: url(../images/icon-self-care.svg);
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    padding: 10vw 5vw;
+  }
+  .main__inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .user-card {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 auto;
+            flex: 0 1 auto;
+  }
+  .user-card__top {
+    padding: 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 1rem;
+  }
+  .user-card__img {
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    margin: 0;
+  }
+  .user-card__text h1 {
+    font-size: 170%;
+  }
+  .user-card__nav {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .cards__container {
+    min-width: 100%;
+  }
+  .cards__inner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .cards__top {
+    min-width: 100%;
+  }
+  .cards__current, .cards__previous {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 auto;
+            flex: 0 1 auto;
+    margin: 0;
+  }
+  .cards__current {
+    font-size: 150%;
+  }
+  .cards__previous {
+    text-align: right;
+  }
 }
